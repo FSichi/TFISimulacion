@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/simulacionEstandar.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script src="../js/library/jquery-3.6.0.js"></script>
+    <title>Resultado de Simulacion Estandar</title>
+</head>
+<body>
+
+    <a class="logo" href="../index.html" target="_self"><img class="logo" src="../images/logo quilmes.png" alt="Logo Quilmes" ></a>
+    
+    <h1 class="titulo ">Resultado de la Simulacion Estandar </h1>
+
+
+    <section id="resultadosMensuales">
+
+        <div  class="contenedor">
+            <h1 class="titulo ">Registro Mensual <i class="fas fa-clipboard"></i></h1>
+            <Button id="btnResultadosM" class="btn animate__animated animate__jackInTheBox">Mostrar Registro</Button>
+        </div>
+
+
+        <div id="seccionResultadosM">
+
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">DATOS ESTADISTICOS <i class="fas fa-money-bill-wave"></i></h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Ingresos Mensuales :</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="IM" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Costos Mensuales : </label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="CM" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Ganancia Neta:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="GN" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de Litros Producidos:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="CTL" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">UTILIZACIÓN PRODUCTIVA <i class="fab fa-algolia"></i></h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Sigmatec:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procS" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Cold Contact :</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procC" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Destilacion:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procD" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Destilacion al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procDV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Pelicula al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procPV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">COSTO PRODUCTIVO <i class="fas fa-money-bill-wave"></i></h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Sigmatec:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoS" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Cold Contact :</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoCC" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Destilacion:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoD" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Destilacion al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoDV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Pelicula al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoPV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">CANTIDAD DE LITROS DESPERDICIADOS <i class="fas fa-tint-slash"></i></h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Sigmatec:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitrosS" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Cold Contact :</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitrosCC" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Destilacion:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitrosD" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Destilacion al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitrosDV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Proceso Pelicula al Vacio:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitrosPV" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                
+    </section>
+
+    <section id="resultadosDiarios">
+
+        <div  class="contenedor">
+            <h1 class="titulo ">Registros Diarios <i class="fas fa-clipboard"></i></h1>
+            <Button id="btnResultadosD" class="btn animate__animated animate__jackInTheBox">Mostrar Registros</Button>
+        </div>
+
+
+        <div id="seccionResultadosD">
+            
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">Dia número: 
+                    <i id="btnMenos" class="fas fa-chevron-left" style="margin-left: 50px;"></i>
+                    <input class="inpRes" type="number" id="numDia" readonly value="1">
+                    <i id="btnMas" class="fas fa-chevron-right"></i>
+                </h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Proceso Utilizado:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="procUt" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Graduacion Alcoholica:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="gradAlc" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Costo diario productivo:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoDiario" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de litros producidos:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitros" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de latas elaboradas:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLatas" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de Six Packs Ensamblados:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantSX" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+
+        
+
+                
+    </section>
+
+    <script type="module" src="../js/simulacionEstandar.js"></script>
+    <script type="module" src="../js/modeloSimulacion.js"></script>
+</body>
+</html>

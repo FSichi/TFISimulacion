@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    background-color: rgb(7, 20, 36); 
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-attachment: fixed; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo{
+    position: relative;
+    border-radius: 100%;
+    width: 100px; 
+    height: 100px;
+    margin-left: 1%;
+    margin-top: 1%;
+    
+}
+
+.logo:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+/* CONTENEDORES*/
+
+.contenedor{
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px -10px rgb(67, 166, 231);
+    border-radius: 40px;
+    border: 5px solid rgb(255, 255, 255); 
+     
+    width: 90%;
+    max-width: 1000px;
+    margin: auto auto 24px auto;
+    padding: 5px 0;
+
+    background-color: #081525;
+}
+
+.contenedor:hover{
+    background-color: black;
+    color: white;
+    transform : scale(1.05);
+    box-shadow: 0 10px 80px -10px rgb(6, 22, 32);
+}
+
+.contP{
+    background-color: rgb(7, 53, 90);
+    box-shadow: 0 10px 30px -10px rgb(255, 255, 255);
+    font-family: 'Chela One', cursive;
+    
+}
+
+.contP:hover{
+    background-color: rgb(21, 133, 185);
+}
+
+
+/*  ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.fila {
+    
+    margin-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -100px;
+}
+  
+.col {
+    width: 50%;
+    
+}
+  
+label {
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: rgb(241, 234, 225);
+}
+  
+input {
+    
+    border: none;
+    
+  }
+  
+.btnS {
+    width: 60%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+  
+.btnS:hover {
+    background: #000000;
+    color: whitesmoke;
+}
+  
+  
+.numero-caracteres .botones {
+    
+  /*   display: -webkit-box;
+    display: -ms-flexbox; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  
+.numero-caracteres .botones div {
+    width: 100%;
+}
+  
+.numero-caracteres .botones div:nth-child(1) button {
+    border-radius: 10px;
+}
+  
+.numero-caracteres .botones div:nth-child(3) button {
+    border-radius: 10px;
+}
+  
+.numero-caracteres input {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: default;
+    background-color: #081525;
+    color: rgb(255, 255, 255);
+}
+  
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+.contenedor h1{
+    font-size: 2rem;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-family: 'Chela One', cursive;
+}
+
+
+.titulo{
+    font-family: 'Chela One', cursive;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 40px;
+    
+}
+
+.contenedor .titulo{
+    
+    margin-top: 20px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.contenedor .btn{
+
+    font-family: 'Chela One', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+  
+    margin: 8% ;
+    width: 40%;
+    padding: 2%;
+    background-color: rgb(241, 225, 225);
+    border-radius: 100px;
+    box-shadow: 0 10px 80px -10px rgb(67, 166, 231);
+
+}
+
+
+
+.contenedor .btnTemp{
+    margin: 4% 0 4% 0;
+    background-color: #081525;
+    color: whitesmoke;
+    box-shadow: none;
+}
+
+.contenedor .btnTemp:hover{
+
+    box-shadow: none;
+    transform: scale(1.1);
+    background-color: #081525;
+    color: whitesmoke;
+}
+
+.procesos .dias{
+    font-family: 'Chela One', cursive;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    
+}
+
+.procesos .icono{
+    color: white;
+    font-size: 3rem;
+}
+
+.procesos .btn{
+    margin: 4% ;
+    width: 23%;
+    padding: 2%;
+    border-radius: 100px;
+    box-shadow: 0 10px 80px -10px rgb(19, 129, 202);
+    background-color: #081525;
+   
+    color: white;
+}
+
+.procesos .btn:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 10px 100px -10px rgb(3, 144, 238);
+    transform: scale(1.5);
+}
+
+
+.procesos .btnFlujo{
+    background-color: #3367f7;
+    width: 60%;
+}
+
+.btn:hover{
+    background-color: #3367f7;
+    box-shadow: 0 10px 60px -10px rgb(255, 255, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.btn i{
+    position: relative;
+    top: 3px;
+    left: 40px;
+    font-size: 1.6rem;
+}
+
+
+.emergente{
+
+        box-shadow: 0 10px 30px -10px rgb(0, 0, 0);
+        border-radius: 10px;
+        border: 5px solid rgb(255, 255, 255); 
+}
+
+
+@media screen and (max-width:1300px) {
+   
+    .contenedor{
+
+        text-align: center;
+    
+        box-shadow: 0 10px 30px -10px rgb(67, 166, 231);
+        border-radius: 40px;
+        border: 5px solid rgb(255, 255, 255); 
+         
+        width: 60%;
+        max-width: 1000px;
+        margin: auto auto 24px auto;
+        padding: 0 0;
+    
+        background-color: #081525;
+    }
+
+    .contenedor .btn{
+
+        margin: 3% ;
+        width: 40%; 
+        padding: 2%;
+        border-radius: 100px;
+
+    }
+
+    .procesos .btn:hover{
+        background-color: white;
+        color: black;
+        box-shadow: 0 10px 100px -10px rgb(3, 144, 238);
+        transform: scale(1.2);
+    }
+
+    .fila {
+        margin-left: 0px;
+    }
+}
+
+
+
+@media screen and (max-width:800px) {
+   
+    .logo{
+        margin: 10% 0% 0% 17% ;
+        margin-top: 5px;
+        position: relative;
+        justify-self:center;
+        width: 140px; 
+        height: 140px;
+    }
+
+    .articulo {
+        width: 45%;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+  
+
+    .logo{
+        margin: 10% 0% 0% 17% ;
+        margin-bottom: 50px;
+        position: relative;
+        justify-self:center;
+        width: 140px; 
+        height: 140px;
+    }
+
+}
+

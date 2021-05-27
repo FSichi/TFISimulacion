@@ -1,0 +1,152 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+
+    background-color: rgb(7, 20, 36); 
+    background-image: url(../images/Quilmes.jpg);
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-attachment: fixed; 
+}
+
+.contenedor{
+
+    width: 30%;
+    margin: 470px auto 0 auto; 
+
+/*  box-shadow: 0 10px 30px -10px rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 5px solid rgb(255, 255, 255); */
+
+    /* Arriba | Derecha | Abajo | Izquierda */
+
+}
+
+.contenedor .btn{
+
+    font-family: 'Chela One', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    
+    margin: 7% ;
+    width: 80%;
+    padding: 4%;
+    background-color: rgb(241, 234, 225);
+    border-radius: 100px;
+    box-shadow: 0 10px 80px -10px rgb(67, 166, 231);
+
+}
+
+.btn:hover{
+    background-color: #3367f7;
+    box-shadow: 0 10px 60px -10px rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.btn i{
+    position: relative;
+    top: 3px;
+    left: 40px;
+    font-size: 1.6rem;
+}
+
+
+@media screen and (max-width:1300px) {
+   
+    .contenedor{
+        width: 30%;
+        height: 20%;
+        margin: 22% 0 0 36%;
+    }
+
+    .contenedor .btn{
+
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        
+        margin: 7% ;
+        width: 80%;
+        padding: 3%;
+
+    }
+
+}
+
+
+
+@media screen and (max-width:800px) {
+   
+    .contenedor{
+
+        width: 80%;
+        height: 30%;
+        margin: 80% auto 0 auto; 
+
+    }
+
+
+    .contenedor .btn{
+
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        
+        margin: 8% ;
+        width: 80%;
+        padding: 4%;
+
+        background-color: rgb(241, 234, 225);
+        border-radius: 100px;
+        box-shadow: 0 10px 80px -10px rgb(67, 166, 231);
+
+    }
+
+    .btn:hover{
+        background-color: #3367f7;
+        box-shadow: 0 10px 60px -10px rgb(0, 0, 0);
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+}
+
+@media screen and (max-width:600px) {
+  
+    .contenedor{
+
+        width: 80%;
+        height: 30%;
+        margin: 85% auto ; 
+    
+    }
+
+    .contenedor .btn{
+
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        
+        margin: 8% ;
+        width: 80%;
+        padding: 4%;
+
+        background-color: rgb(241, 234, 225);
+        border-radius: 100px;
+        box-shadow: 0 10px 80px -10px rgb(67, 166, 231);
+
+    }
+
+    .btn:hover{
+        background-color: #3367f7;
+        box-shadow: 0 10px 60px -10px rgb(0, 0, 0);
+        color: white;
+        cursor: pointer;
+    }
+}

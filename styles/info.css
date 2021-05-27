@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    background-color: rgb(7, 20, 36); 
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-attachment: fixed; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo{
+    border-radius: 100%;
+    width: 100px; 
+    height: 100px;
+    margin-left: 1%;
+    margin-top: 1%;
+    position: absolute;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    /* overflow: hidden; */
+    padding: 30px 0;
+    
+}
+
+.titulo{
+    font-family: 'Chela One', cursive;
+    color: white;
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+/* Seccion de Proyecto */
+
+
+.descripcion{
+    font-family: 'Chela One', cursive;
+    margin-top: 5%;
+    color: rgb(241, 234, 225);
+
+    box-shadow: 0 7px 20px -8px rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 5px solid rgb(38, 110, 192); 
+
+    padding: 5%;
+}
+
+.descripcion:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+
+}
+
+.btn{
+
+    font-family: 'Chela One', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    
+    margin: 5% 0% 0% 8% ;
+    width: 80%;
+    padding: 4%;
+    background-color: rgb(241, 234, 225);
+    border-radius: 100px;
+    box-shadow: 0 10px 80px -10px rgb(67, 166, 231);
+
+}
+
+.btn:hover{
+    background-color: #3367f7;
+    box-shadow: 0 10px 60px -10px rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+
+/* Seccion del Equipo */
+
+.contenedor-articulo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.articulo {
+    width: 29%;
+    background: rgb(241, 234, 225);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    transition: 0.5s;
+    box-shadow: 0 0px 25px 0px rgb(67, 166, 231);
+    text-align: center;
+}
+
+.articulo:hover{
+    
+    background-color: #081525;
+    color: white;
+    transform : scale(1.2);
+    box-shadow: 0 0px 25px 0px rgb(255, 255, 255);
+}
+
+
+.articulo>img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgb(67, 166, 231);
+}
+
+.articulo>h3 {
+
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+
+/* Breakpoints responsive */
+
+
+@media screen and (max-width:1300px) {
+   
+    .contenedor {
+        width: 75%;
+        max-width: 1000px;
+        margin: auto;
+        /* overflow: hidden; */
+        padding: 20px 0;
+        
+    }
+    
+    .contenedor-articulo {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        justify-content: space-around;
+    }
+
+    .articulo {
+        width: 29%;
+        background: rgb(241, 234, 225);
+        margin-bottom: 30px;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+        transition: 0.5s;
+        box-shadow: 0 0px 25px 0px rgb(67, 166, 231);
+        text-align: center;
+    }
+
+    .articulo:hover{
+        transform : scale(1.1);
+    }
+
+    .descripcion:hover{
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+    
+}
+
+@media screen and (max-width:800px) {
+   
+    .logo{
+        margin: 10% 0% 0% 17% ;
+        position: relative;
+        justify-self:center;
+        width: 140px; 
+        height: 140px;
+    }
+
+    .articulo {
+        width: 45%;
+    }
+
+    .descripcion:hover{
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+
+
+}
+
+@media screen and (max-width:600px) {
+  
+    .articulo {
+        width: 95%;
+    }
+    .descripcion:hover{
+        transform: scale(1.05);
+        transition: 0.5s;
+    }
+}

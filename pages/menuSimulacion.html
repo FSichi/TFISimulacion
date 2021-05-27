@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Simulacion</title>
+    <link rel="stylesheet" href="../styles/simulacion.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script src="../js/library/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+    
+    <a class="logo" href="../index.html" target="_self"><img class="logo" src="../images/logo quilmes.png" alt="Logo Quilmes" ></a>
+    
+    <h1 class="titulo ">Seleccione la Manera de Trabajar del Simulador</h1>
+
+    <section id="Procesos">
+
+        <div class="contenedor">
+
+            <h1 class="titulo ">Desalcoholizacion por Tipo de Proceso <i class="fas fa-microchip"></i></h1>
+            <Button id="btnProceso" class="btn animate__animated animate__jackInTheBox">Seleccione Proceso</Button>
+           
+            <div id="seccionProcesos" class="procesos">
+                <p class="dias"><i class="fas fa-calendar-day"></i> Ingrese la Cantidad de Dias a Simular<input style="margin-left: 30px;" id="rango" type="range" value="15" min="1" max="30" oninput="this.nextElementSibling.value = this.value"><output>15</output></p>
+                
+                <div> 
+                    <a class="boton" href="./simulacionParticular.html" target="_self"><Button id="btnSigmatec" class="btn animate__animated animate__jackInTheBox">Sistema Sigmatec</Button></a>
+
+                    <a class="boton" href="./simulacionParticular.html" target="_self"><Button id="btnDestilacion" class="btn animate__animated animate__jackInTheBox">Destilacion</Button></a>
+
+                    <a class="boton" href="./simulacionParticular.html" target="_self"><Button id="btnCold" class="btn animate__animated animate__jackInTheBox">Cold Contact</Button></a>
+
+                    <a class="boton" href="./simulacionParticular.html" target="_self"><Button id="btnVacio" class="btn animate__animated animate__jackInTheBox">Destilacion al Vacio</Button></a>
+
+                    <a class="boton" href="./simulacionParticular.html" target="_self"><Button id="btnEvaporacion" class="btn animate__animated animate__jackInTheBox">Evaporacion Pelicula al Vacio</Button></a>
+
+                </div>
+                
+
+                <a class="boton" href="./simulacionEstandar.html" target="_self"><Button id="btnFlujo" class="btn btnFlujo animate__animated animate__jackInTheBox">Simule un Flujo Estandar<i class="fab fa-buffer"></i></Button></a>
+
+                
+                <i id="iconoAyuda" class="icono fas fa-question-circle"></i>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+    <section id="Parametros">
+
+        <div  class="contenedor">
+            <h1 class="titulo ">Desalcoholizacion por Parametro <i class="fas fa-cubes"></i></h1>
+            <Button id="btnParametros" class="btn animate__animated animate__jackInTheBox">Establecer Parametros</Button>
+        </div>
+
+
+        <div id="seccionParametros">
+
+            <div class="contenedor contP">
+
+                <h1 style="color: white;">Temperatura</h1>
+                
+                <div class="fila numero-caracteres">
+
+                    <div class="col">
+                        <label for="numero-caracteres">Temperatura Minima [°C]:</label>
+                    </div>
+
+                    <div class="col botones">
+                        <div>
+                            <button class="btnS" id="btn-menos-uno"><i class="fas fa-minus"></i></button>
+                        </div>
+                        <div>
+                            <input type="text" id="numero-caracteres" readonly value="3">
+                        </div>
+                        <div>
+                            <button class="btnS" id="btn-mas-uno"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="fila numero-caracteres">
+
+                    <div class="col">
+                        <label for="numero-caracteres">Temperatura Maxima [°C]:</label>
+                    </div>
+
+                    <div class="col botones">
+                        <div>
+                            <button class="btnS" id="btn-menos-uno"><i class="fas fa-minus"></i></button>
+                        </div>
+                        <div>
+                            <input type="text" readonly value="7">
+                        </div>
+                        <div>
+                            <button class="btnS" id="btn-mas-uno"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <Button id="btnTemp" class="btn btnTemp animate__animated animate__jackInTheBox">Establecer Temperatura</Button>
+
+            </div>
+
+
+    
+        </div>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/modeloSimulacion.js"></script>
+</body>
+</html>
