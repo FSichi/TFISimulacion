@@ -148,7 +148,33 @@ body{
         padding: 20px 0;
         
     }
+
+    .descripcion{
+        margin-top: 5%;
+        padding: 3%;
+        font-size: 0.8rem;
+    }
+
+    .descripcion:hover{
+        transform: scale(1.1);
+        font-size: 1rem;
+        transition: 0.5s;
+    }
     
+    .btn{
+        font-size: 1.2rem;  
+        margin: 4% 0% 0% 20% ;
+        width: 60%;
+        padding: 2%;
+    }
+    
+    .btn:hover{
+        background-color: #3367f7;
+        box-shadow: 0 10px 60px -10px rgb(0, 0, 0);
+        color: white;
+        cursor: pointer;
+    }
+
     .contenedor-articulo {
         display: flex;
         flex-wrap: wrap;
@@ -157,24 +183,30 @@ body{
     }
 
     .articulo {
-        width: 29%;
+        width: 26%;
         background: rgb(241, 234, 225);
         margin-bottom: 30px;
         border-radius: 10px;
-        padding: 20px 20px 20px 20px;
+        padding: 10px 10px 10px 10px;
         transition: 0.5s;
         box-shadow: 0 0px 25px 0px rgb(67, 166, 231);
         text-align: center;
     }
 
-    .articulo:hover{
-        transform : scale(1.1);
+    .articulo>img{
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 0 8px 32px rgb(67, 166, 231);
+        margin-bottom: -20px;
     }
 
-    .descripcion:hover{
-        transform: scale(1.05);
-        transition: 0.5s;
+    .articulo:hover{
+        transform : scale(1.3);
     }
+
+
     
 }
 

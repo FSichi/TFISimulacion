@@ -1,23 +1,29 @@
-import {modeloSimulacion} from './modeloSimulacion.js'
+import {modeloParticular} from '../modeloSimulacion.js'
 
-modeloSimulacion();
+var proceso = localStorage.getItem("proc");
+var dias = localStorage.getItem("dias");
 
-var regMensual = JSON.parse(localStorage.getItem('regMensual'));
-var regDiario = JSON.parse(localStorage.getItem('regDiario'));
+modeloParticular(dias, proceso);
 
-$('#seccionResultadosM').hide();
+$('#seccionResultadosG').hide();
 $('#seccionResultadosD').hide();
 
-const btnResultadosM = document.getElementById('btnResultadosM');
+var regGeneral = JSON.parse(localStorage.getItem('regMensual'));
+var regDiario = JSON.parse(localStorage.getItem('regDiario'));
+
+var titProc = document.getElementById('titProc');
+
+const btnResultadosG = document.getElementById('btnResultadosG');
 const btnResultadosD = document.getElementById('btnResultadosD');
 
 // VARIABLES DE REGISTRO MENSUAL
 
+var DP = document.getElementById('DP');
+
 var GN = document.getElementById('GN');
 var CM = document.getElementById('CM');
 var CTL = document.getElementById('CTL');
-var IM = document.getElementById('IM');
-
+ 
 var procS = document.getElementById('procS');
 var procC = document.getElementById('procC');
 var procD = document.getElementById('procD');
@@ -42,34 +48,39 @@ var btnMenos = document.getElementById('btnMenos');
 var numDia = document.getElementById('numDia');
 var btnMas = document.getElementById('btnMas');
 
-var procUt = document.getElementById('procUt');
 var gradAlc = document.getElementById('gradAlc');
 var costoDiario = document.getElementById('costoDiario');
 var cantLitros = document.getElementById('cantLitros');
 var cantLatas = document.getElementById('cantLatas');
 var cantSX = document.getElementById('cantSX');
 
-btnMenos.addEventListener('click',()=>{
 
-    if(parseInt(numDia.value) > 1){
-      
-        numDia.value = parseInt(numDia.value) - 1;
+const nombreProceso = () => {
 
-        actualizarRegDiario(parseInt(numDia.value));
+    if(proceso == 1){
+        proceso = 'Sistema Sigmatec';
     }
-});
-
-btnMas.addEventListener('click',()=>{
-
-    if(parseInt(numDia.value) < 30){
-      
-        numDia.value = parseInt(numDia.value) + 1;
-
-        actualizarRegDiario(parseInt(numDia.value));
+    else if(proceso == 2){
+        proceso = 'Cold Contact';
     }
-});
+    else if(proceso == 3){
+        proceso = 'Destilacion';
+    }
+    else if(proceso == 4){
+        proceso = 'Destilacion al Vacio';
+    }
+    else{
+        proceso = 'Pelicula al Vacio'
+    }
 
-btnResultadosM.addEventListener('click', (e) => {
+    titProc.innerHTML = 'Simulacion Particular con el Proceso ' + proceso;
+
+}
+
+nombreProceso();
+
+
+btnResultadosG.addEventListener('click', (e) => {
     e.preventDefault();
     cambiarSeccionMensual();
 });
@@ -79,25 +90,46 @@ btnResultadosD.addEventListener('click', (e) => {
     cambiarSeccionDiaria();
 });
 
+btnMenos.addEventListener('click',()=>{
+
+    if(parseInt(numDia.value) > 1){
+      
+        numDia.value = parseInt(numDia.value) - 1;
+
+        actualizarRegDiario(parseInt(numDia.value));
+    }
+
+});
+
+btnMas.addEventListener('click',()=>{
+   
+
+    if(parseInt(numDia.value) < dias){
+      
+        numDia.value = parseInt(numDia.value) + 1;
+
+        actualizarRegDiario(parseInt(numDia.value));
+    }
+});
 
 const cambiarSeccionMensual = () => {
 
     let text = '';
     
-    if( $("#btnResultadosM").text() === "Mostrar Registro" ){
-        $("#seccionResultadosM").show();
+    if( $("#btnResultadosG").text() === "Mostrar Registro" ){
+        $("#seccionResultadosG").show();
         $("#resultadosDiarios").hide();
         text = "Ocultar Registro";
     }
     else{
-        $("#seccionResultadosM").hide();
+        $("#seccionResultadosG").hide();
         $("#resultadosDiarios").show();
         text = "Mostrar Registro";
     }
 
-    $("#btnResultadosM").html(text);
+    $("#btnResultadosG").html(text);
 
-    cargarRegistroMensual();
+    cargarRegistroGeneral();   
 
 }
 
@@ -107,53 +139,50 @@ const cambiarSeccionDiaria = () => {
 
     if( $("#btnResultadosD").text() === "Mostrar Registros" ){
         $("#seccionResultadosD").show();
-        $("#resultadosMensuales").hide();
+        $("#resultadosGenerales").hide();
         text = "Ocultar Registros";
     }
     else{
         $("#seccionResultadosD").hide();
-        $("#resultadosMensuales").show();
+        $("#resultadosGenerales").show();
         text = "Mostrar Registros";
     }
 
     $("#btnResultadosD").html(text);
 
-    cargarRegistroDiario();
-
+    cargarRegistroDiario();  // TENGO QUE HACER ESTE METODO
 }
 
-const cargarRegistroMensual = () => {
+const cargarRegistroGeneral = () => {
 
-    IM.value = '$ ' + regMensual.ingresoMensual;
-    GN.value = '$ ' + regMensual.gananciaNeta;
-    CM.value = '$ ' + regMensual.costoMensual;
-    CTL.value = regMensual.cantLitrosTot;
+    DP.value = dias;
+    GN.value = '$ ' + regGeneral.gananciaNeta;
+    CM.value = '$ ' + regGeneral.costoMensual;
+    CTL.value = regGeneral.cantLitrosTot;
 
+    procS.value = regGeneral.cantS;
+    procC.value = regGeneral.cantCC;
+    procD.value = regGeneral.cantD;
+    procDV.value = regGeneral.cantDV;
+    procPV.value = regGeneral.cantPV;
 
-    procS.value = regMensual.cantS;
-    procC.value = regMensual.cantCC;
-    procD.value = regMensual.cantD;
-    procDV.value = regMensual.cantDV;
-    procPV.value = regMensual.cantPV;
+    costoS.value = '$ ' + regGeneral.costoS;
+    costoCC.value = '$ ' + regGeneral.costoCC;
+    costoD.value = '$ ' + regGeneral.costoD;
+    costoDV.value = '$ ' + regGeneral.costoDV;
+    costoPV.value = '$ ' + regGeneral.costoPV;
 
-    costoS.value = '$ ' + regMensual.costoS;
-    costoCC.value = '$ ' + regMensual.costoCC;
-    costoD.value = '$ ' + regMensual.costoD;
-    costoDV.value = '$ ' + regMensual.costoDV;
-    costoPV.value = '$ ' + regMensual.costoPV;
-
-    cantLitrosS.value = regMensual.cantLitrosS;
-    cantLitrosCC.value = regMensual.cantLitrosCC;
-    cantLitrosD.value = regMensual.cantLitrosD;
-    cantLitrosDV.value = regMensual.cantLitrosDV;
-    cantLitrosPV.value = regMensual.cantLitrosPV;
+    cantLitrosS.value = regGeneral.cantLitrosS;
+    cantLitrosCC.value = regGeneral.cantLitrosCC;
+    cantLitrosD.value = regGeneral.cantLitrosD;
+    cantLitrosDV.value = regGeneral.cantLitrosDV;
+    cantLitrosPV.value = regGeneral.cantLitrosPV;
 }
 
 const cargarRegistroDiario = () => {
 
     //POR DEFECTO SE CARGA EL PRIMER DIA
 
-    procUt.value = regDiario[0].procUt;
     gradAlc.value = regDiario[0].gradAlc + ' %';
     costoDiario.value = '$ ' + regDiario[0].costoDiario;
     cantLitros.value = regDiario[0].cantLitros;
@@ -165,11 +194,11 @@ const actualizarRegDiario = (dia) => {
 
     //POR DEFECTO SE CARGA EL PRIMER DIA
 
-    procUt.value = regDiario[dia-1].procUt;
     gradAlc.value = regDiario[dia-1].gradAlc + ' %';
     costoDiario.value = '$ ' + regDiario[dia-1].costoDiario;
     cantLitros.value = regDiario[dia-1].cantLitros;
     cantLatas.value =regDiario[dia-1].cantLatas;
     cantSX.value = regDiario[dia-1].cantSX;
 }
+
 

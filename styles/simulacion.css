@@ -5,7 +5,6 @@
 }
 
 body{
-
     background-color: rgb(7, 20, 36); 
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat; 
@@ -21,7 +20,6 @@ body{
     height: 100px;
     margin-left: 1%;
     margin-top: 1%;
-    
 }
 
 .logo:hover{
@@ -59,7 +57,13 @@ body{
     background-color: rgb(7, 53, 90);
     box-shadow: 0 10px 30px -10px rgb(255, 255, 255);
     font-family: 'Chela One', cursive;
-    
+}
+
+.contP p {
+    margin-top: 4%;
+    font-family: 'Chela One', cursive;
+    color: whitesmoke;
+    font-size: 1.5rem;
 }
 
 .contP:hover{
@@ -78,7 +82,8 @@ body{
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
-    margin-left: -100px;
+    text-align: left;
+    margin-left: 2%;
 }
   
 .col {
@@ -95,8 +100,9 @@ label {
 input {
     
     border: none;
+    text-align: center;
     
-  }
+}
   
 .btnS {
     width: 60%;
@@ -111,6 +117,7 @@ input {
     border-radius: 4px;
     cursor: pointer;
     transition: all .3s ease;
+    margin-left: 28%;
 }
   
 .btnS:hover {
@@ -145,17 +152,20 @@ input {
     font-family: 'Libre Baskerville', serif;
     font-size: 2rem;
     height: 40px;
-    width: 100%;
+    width: 115%;
     border-radius: 10px;
     cursor: default;
     background-color: #081525;
     color: rgb(255, 255, 255);
 }
+
+.botones .inputCosto{
+    margin-left: 10%;
+    width: 80%;
+
+}
   
-
-
 /* ----------------------------------------------------------------------------------------- */
-
 
 .contenedor h1{
     font-size: 2rem;
@@ -212,6 +222,17 @@ input {
     background-color: #081525;
     color: whitesmoke;
 }
+
+.btnPar:hover{
+    background-color: #000000;
+    color: white;
+}
+
+.btnPar .btnTemp:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
 
 .procesos .dias{
     font-family: 'Chela One', cursive;
@@ -274,6 +295,10 @@ input {
 
 @media screen and (max-width:1300px) {
    
+    .titulo{
+        margin-top: -60px;
+    }
+
     .contenedor{
 
         text-align: center;
@@ -306,12 +331,27 @@ input {
         transform: scale(1.2);
     }
 
+    .procesos .btnFlujo{
+       
+        width: 70%;
+    }
+
     .fila {
         margin-left: 0px;
     }
+
+    label {
+        font-size: 1.24rem;
+
+        margin-left: 4%;
+    }
 }
 
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 @media screen and (max-width:800px) {
    

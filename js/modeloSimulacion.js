@@ -69,7 +69,7 @@ export const modeloSimulacion = () => {
 
     GN = ( IM - CM );
 
-    mostrarRegGeneral();
+    mostrarRegGeneral(0);
 }
 
 const simularDia = () => {
@@ -125,16 +125,16 @@ export const modeloParticular = (dias, proceso) => {
     CTS = 0 ; CTC = 0 ; CTD = 0 ; CTDV = 0 ; CTPV = 0 ;     
     CLS = 0 ; CLC = 0 ; CLD = 0 ; CLDV = 0 ; CLPV = 0 ;      
 
-    //SIMULACION DE LOS 30 DIAS
+    //SIMULACION DE LOS DIAS SELECCIONADOS
 
     for(d = 1 ; d <= dias ; d++){
-
+    
         simularDiaParticular(proceso);
     }
 
     GN = ( IM - CM );
 
-    mostrarRegGeneral();
+    mostrarRegGeneral(0);
 
 }
 
@@ -177,6 +177,57 @@ const simularDiaParticular = (proceso) => {
 
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------// 
+
+export const modeloParametrico = (graduacion,costos,temperatura,despLitros,dias) => {
+
+    diasArray = [];
+
+    CTL = 0; PTL = 0 ; CM = 0 ; IM = 0 ; GN = 0 ;
+ 
+  //SIMULACION DE LOS DIAS SELECCIONADOS
+
+    for(d = 1 ; d <= dias ; d++){
+        
+        simularDiaParametro(graduacion,costos,temperatura,despLitros);
+    }
+
+    GN = ( IM - CM );
+
+    mostrarRegGeneral(1);
+}
+
+const simularDiaParametro = (graduacion,costos,temperatura,despLitros) => {
+    
+    P = 0; GD = 0;
+
+    //DISTRIBUCION UNIFORME DE LA CANTIDAD DE LITROS PRODUCIDOS DIARIOS
+    L  = distribucionUniforme(18000, 20000, 0);
+
+    CTL = (CTL + L);
+    CL = Math.trunc( L / 0.473);
+    CX = Math.trunc( CL / 6);
+    GD = CL * 110;
+    IM = IM + GD;
+
+    //DISTRIBUCION UNIFORME DE LA GRADUACION ALCOHOLICA
+    GA = distribucionUniforme(parseFloat(graduacion[0]),parseFloat(graduacion[1]), 1);
+
+    //DISTRIBUCION EXPONENCIAL DE LA CANT. DE LITROS DESPERDICIADOS
+    DL = distribucionExponencial(despLitros);
+
+    //DISTRIBUCION UNIFORME DE LA TEMP. DE TRABAJO
+    TD = distribucionUniforme(parseFloat(temperatura[0]), parseFloat(temperatura[1]), 0)
+
+    //DISTRIBUCION NORMAL DEL COSTO DIARIO 
+    CD = distribucionNormal(parseInt(costos[0]), parseInt(costos[1]));
+
+    PTL = ( PTL + DL );
+    CM = ( CM + CD );
+
+    mostrarRegDiario(0);
+
+}
 //-------------------------------------------------------------------------------------------------------------------------------------------------// 
 
 const procesoSigmatec = () => {
@@ -322,7 +373,7 @@ const mostrarRegDiario = (valor) => {
             nroDia: d,
             procUt: proceso,
             gradAlc: new Intl.NumberFormat("de-DE").format(GA),
-            costoDiario: new Intl.NumberFormat("de-DE").format(GD),
+            costoDiario: new Intl.NumberFormat("de-DE").format(CD),
             cantLitros: new Intl.NumberFormat("de-DE").format(L),
             cantLatas: new Intl.NumberFormat("de-DE").format(CL),
             cantSX: new Intl.NumberFormat("de-DE").format(CX)
@@ -335,7 +386,8 @@ const mostrarRegDiario = (valor) => {
         var diaParticular = {
             nroDia: d,
             gradAlc: new Intl.NumberFormat("de-DE").format(GA),
-            costoDiario: new Intl.NumberFormat("de-DE").format(GD),
+            costoDiario: new Intl.NumberFormat("de-DE").format(CD),
+            tempDiaria: new Intl.NumberFormat("de-DE").format(TD),
             cantLitros: new Intl.NumberFormat("de-DE").format(L),
             cantLatas: new Intl.NumberFormat("de-DE").format(CL),
             cantSX: new Intl.NumberFormat("de-DE").format(CX)
@@ -345,49 +397,51 @@ const mostrarRegDiario = (valor) => {
     }
 }
 
-const mostrarRegGeneral = () => {
+const mostrarRegGeneral = (valor) => {
 
-    var mes = {
+    if(valor !== 1){
 
-        gananciaNeta: new Intl.NumberFormat("de-DE").format(GN),
-        ingresoMensual: new Intl.NumberFormat("de-DE").format(IM),
-        costoMensual: new Intl.NumberFormat("de-DE").format(CM),
-        cantLitrosTot: new Intl.NumberFormat("de-DE").format(CTL),
+        var mes = {
 
-        cantS: CS,
-        cantCC: CC,
-        cantD: CDS,
-        cantDV: CDV,
-        cantPV: CPV,
+            gananciaNeta: new Intl.NumberFormat("de-DE").format(GN),
+            ingresoMensual: new Intl.NumberFormat("de-DE").format(IM),
+            costoMensual: new Intl.NumberFormat("de-DE").format(CM),
+            cantLitrosTot: new Intl.NumberFormat("de-DE").format(CTL),
+    
+            cantS: CS,
+            cantCC: CC,
+            cantD: CDS,
+            cantDV: CDV,
+            cantPV: CPV,
+    
+            costoS: new Intl.NumberFormat("de-DE").format(CTS),
+            costoCC: new Intl.NumberFormat("de-DE").format(CTC),
+            costoD: new Intl.NumberFormat("de-DE").format(CTD),
+            costoDV: new Intl.NumberFormat("de-DE").format(CTDV),
+            costoPV: new Intl.NumberFormat("de-DE").format(CTPV),
+    
+            
+            cantLitrosS: new Intl.NumberFormat().format(CLS.toFixed(3)),
+            cantLitrosCC: new Intl.NumberFormat().format(CLC.toFixed(3)),
+            cantLitrosD: new Intl.NumberFormat().format(CLD.toFixed(3)) ,
+            cantLitrosDV: new Intl.NumberFormat().format(CLDV.toFixed(3)),
+            cantLitrosPV: new Intl.NumberFormat().format(CLPV.toFixed(3))
+        };
+    }
+    else{
 
-        costoS: new Intl.NumberFormat("de-DE").format(CTS),
-        costoCC: new Intl.NumberFormat("de-DE").format(CTC),
-        costoD: new Intl.NumberFormat("de-DE").format(CTD),
-        costoDV: new Intl.NumberFormat("de-DE").format(CTDV),
-        costoPV: new Intl.NumberFormat("de-DE").format(CTPV),
+        var mes = {
 
-        
-        cantLitrosS: new Intl.NumberFormat().format(CLS.toFixed(3)),
-        cantLitrosCC: new Intl.NumberFormat().format(CLC.toFixed(3)),
-        cantLitrosD: new Intl.NumberFormat().format(CLD.toFixed(3)) ,
-        cantLitrosDV: new Intl.NumberFormat().format(CLDV.toFixed(3)),
-        cantLitrosPV: new Intl.NumberFormat().format(CLPV.toFixed(3))
-    };
+            gananciaNeta: new Intl.NumberFormat("de-DE").format(GN),
+            ingresoMensual: new Intl.NumberFormat("de-DE").format(IM),
+            costoMensual: new Intl.NumberFormat("de-DE").format(CM),
+            cantLitrosTot: new Intl.NumberFormat("de-DE").format(CTL),
+            cantLitrosDesp: new Intl.NumberFormat("de-DE").format(PTL)
+        };
 
+    }
+    
     // Guardo el objeto como un string
     localStorage.setItem('regMensual', JSON.stringify(mes));
     localStorage.setItem('regDiario', JSON.stringify(diasArray));
-
-    console.log(CS);
-    console.log(CC);
-    console.log(CDS);
-    console.log(CDV);
-    console.log(CPV);
-
-    console.log(mes);
-    console.log(diasArray);
 }
-
-
-
-

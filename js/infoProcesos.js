@@ -55,7 +55,6 @@ const procesos = [
 
 ];
 
-
 btnMenos.addEventListener('click',()=>{
 
     if(bandera > 1){

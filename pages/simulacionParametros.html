@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/simulacionEstandar.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script src="../js/library/jquery-3.6.0.js"></script>
+
+    <title>Resultados Simulacion Parametros</title>
+</head>
+<body>
+
+    <a class="logo" href="../index.html" target="_self"><img class="logo" src="../images/logo quilmes.png" alt="Logo Quilmes" ></a>
+    <a href="./menuSimulacion.html"><i class="back fas fa-backward"></i></a>
+    <h1 class="titulo ">Simulacion por Parametros </h1>
+
+
+    <section id="resultadosGenerales">
+
+        <div  class="contenedor">
+            <h1 class="titulo ">Registro General <i class="fas fa-clipboard"></i></h1>
+            <Button id="btnResultadosG" class="btn animate__animated animate__jackInTheBox">Mostrar Registro</Button>
+        </div>
+
+        <div id="seccionResultadosG">
+
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">DATOS ESTADISTICOS</h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Dias del Plazo Productivo:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="DP" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label class="lbRes" for="numero-caracteres">Ganancia Neta:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="GN" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Costos Mensuales :</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="CM" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de Litros Producidos:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="CTL" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de Litros Desperdiciados:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="CLD" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+                
+    </section>
+
+    <section id="resultadosDiarios">
+
+        <div  class="contenedor">
+            <h1 class="titulo ">Registros Diarios <i class="fas fa-clipboard"></i></h1>
+            <Button id="btnResultadosD" class="btn animate__animated animate__jackInTheBox">Mostrar Registros</Button>
+        </div>
+
+        <div id="seccionResultadosD">
+            
+            <div class="contenedor contR">
+                
+                <h1 style="color: white;">Dia número: 
+                    <i id="btnMenos" class="fas fa-chevron-left" style="margin-left: 50px;"></i>
+                    <input class="inpRes" type="number" id="numDia" readonly value="1">
+                    <i id="btnMas" class="fas fa-chevron-right"></i>
+                </h1>
+
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Graduacion Alcoholica:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="gradAlc" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Costo diario productivo:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="costoDiario" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Temperatura de Trabajo:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="tempDiaria" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de litros producidos:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLitros" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de latas elaboradas:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantLatas" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila numero-caracteres">
+                    <div class="col">
+                        <label for="numero-caracteres">Cantidad de Six Packs:</label>
+                    </div>
+                    <div class="col botones">
+                        <div>
+                            <input class="inpRes" type="text" id="cantSX" readonly value="3">
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+    </section>
+    
+    <script type="module" src="../js/simulacion/simulacionParametrica.js"></script>
+    <script type="module" src="../js/modeloSimulacion.js"></script>
+</body>
+</html>

@@ -29,6 +29,20 @@ body{
     transition: 0.3s;
 }
 
+.back{
+    font-size: 4rem;
+    color: whitesmoke;
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.back:hover{
+    transform: scale(1.3);
+    transition: 0.3s;
+}
+
+
 .titulo{
     font-family: 'Chela One', cursive;
     text-align: center;
@@ -174,4 +188,97 @@ input {
     color: rgb(255, 255, 255);
     text-align: center;
     
+}
+
+@media screen and (max-width:1300px) {
+  
+
+    .titulo{
+        margin-top: -85px;
+
+    }
+
+    .contenedor{
+
+        text-align: center;
+    
+        box-shadow: 0 10px 30px -10px rgb(67, 166, 231);
+        border-radius: 40px;
+        border: 5px solid rgb(255, 255, 255); 
+         
+        width: 60%;
+        max-width: 1000px;
+        margin: auto auto 24px auto;
+        padding: 0 0;
+    
+        background-color: #081525;
+    }
+
+    .contenedor h1{
+        font-size: 1.7rem;
+        margin-bottom: 40px;
+        margin-top: 20px;
+
+    }
+
+    .contenedor .btn{
+
+        margin: 3% ;
+        width: 40%; 
+        padding: 2%;
+        border-radius: 100px;
+
+    }
+
+    .botones .inpRes{
+        width: 80%;
+        margin-left: 5%;
+        
+    }
+
+    .fila {
+        margin-left: 0px;
+    }
+
+    label {
+        font-size: 1.3rem;
+        margin-left: 4%;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media screen and (max-width:800px) {
+   
+    .logo{
+        margin: 10% 0% 0% 17% ;
+        margin-top: 5px;
+        position: relative;
+        justify-self:center;
+        width: 140px; 
+        height: 140px;
+    }
+
+    .articulo {
+        width: 45%;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+  
+
+    .logo{
+        margin: 10% 0% 0% 17% ;
+        margin-bottom: 50px;
+        position: relative;
+        justify-self:center;
+        width: 140px; 
+        height: 140px;
+    }
+
 }
